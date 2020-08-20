@@ -16,7 +16,7 @@ const Confirm = () => {
 
   const { userState, nextStep, prevStep } = useContext(UserContext);
   
-  const keys = Object.keys(userState);
+  const keys = Object.keys(userState).filter(key => key !== 'step');
 
   const useStyles = makeStyles(theme => ({
     root: {
@@ -52,7 +52,7 @@ const Confirm = () => {
                 <ListItemText>
                   <Typography className={classes.confirmTitle} color="textSecondary" variant="body2">{`${key}`}</Typography>
                   <Divider />
-                  <Typography>{`${userState[key]}`}</Typography>
+                  <Typography variant="subtitle1">{`${userState[key]}`}</Typography>
                 </ListItemText>
               </ListItem>
             )
