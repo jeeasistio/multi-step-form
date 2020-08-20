@@ -6,7 +6,8 @@ import {
   Button,
   List,
   ListItem,
-  ListItemText
+  ListItemText,
+  Divider
 } from '@material-ui';
 
 import { UserContext } from '/contexts/UserContext.jsx';
@@ -49,7 +50,8 @@ const Confirm = () => {
             return (
               <ListItem>
                 <ListItemText>
-                  <Typography className={classes.confirmTitle} gutterBottom color="textSecondary" variant="body2">{`${key}`}</Typography>
+                  <Typography className={classes.confirmTitle} color="textSecondary" variant="body2">{`${key}`}</Typography>
+                  <Divider />
                   <Typography>{`${userState[key]}`}</Typography>
                 </ListItemText>
               </ListItem>
